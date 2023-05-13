@@ -1,0 +1,25 @@
+version: "3"
+
+services:
+  todo:
+    container_name: todo
+    ports:
+      - "8000:8000"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    env_file:
+      - .env
+    depends_on:
+      - postgres
+  postgres:
+    image: postgres
+    container_name: postgresdb
+    ports:
+      - "5436:5432"
+    env_file:
+      - .env
+    volumes:
+      - ./db-data:/var/lib/postgresql/data/
+
