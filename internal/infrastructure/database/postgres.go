@@ -7,12 +7,12 @@ import (
 	"todo-app/config"
 )
 
-type Store struct {
+type Postgres struct {
 	DB *sqlx.DB
 }
 
-func New(cfg *config.Config) *Store {
-	postgres := Store{}
+func New(cfg *config.Config) *Postgres {
+	postgres := Postgres{}
 
 	log.Printf("try open database cfg %v\n", cfg)
 	db, err := sqlx.Open(cfg.DriverName,

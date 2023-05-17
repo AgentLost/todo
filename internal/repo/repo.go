@@ -27,6 +27,6 @@ type TaskRepository interface {
 	GetAllByUserId(userId int) ([]model.Task, error)
 }
 
-func New(store *database.Store) *Repository {
+func New(store *database.Postgres) *Repository {
 	return &Repository{postgres.NewUserRepository(store), postgres.NewTaskRepository(store)}
 }

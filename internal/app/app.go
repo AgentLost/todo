@@ -14,7 +14,7 @@ import (
 func Run(cfg *config.Config) {
 	log.Println(cfg)
 	db := database.New(cfg)
-	//	Migrate(cfg)
+	Migrate(cfg)
 
 	r := repo.New(db)
 	log.Printf("repo %v", r)

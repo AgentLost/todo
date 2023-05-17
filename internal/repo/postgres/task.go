@@ -6,7 +6,7 @@ import (
 )
 
 type Task struct {
-	store *database.Store
+	store *database.Postgres
 }
 
 func (t *Task) GetAllByUserId(userId int) ([]model.Task, error) {
@@ -46,6 +46,6 @@ func (t *Task) GetById(taskId int) (model.Task, error) {
 	return task, err
 }
 
-func NewTaskRepository(store *database.Store) *Task {
+func NewTaskRepository(store *database.Postgres) *Task {
 	return &Task{store: store}
 }

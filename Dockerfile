@@ -13,3 +13,12 @@ RUN go build -o /goapp ./cmd/app
 EXPOSE 8000
 
 CMD ["/goapp"]
+
+
+
+
+
+
+
+
+

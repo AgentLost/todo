@@ -6,7 +6,7 @@ import (
 )
 
 type User struct {
-	store *database.Store
+	store *database.Postgres
 }
 
 func (u *User) Save(user model.UserRequest) error {
@@ -46,6 +46,6 @@ func (u *User) GetById(userId int) (model.User, error) {
 	return user, err
 }
 
-func NewUserRepository(store *database.Store) *User {
+func NewUserRepository(store *database.Postgres) *User {
 	return &User{store: store}
 }
